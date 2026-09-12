@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah Microsoft — Dari Garasi ke Cloud</title>
+<style>
+  :root {
+    --bg: #0a0e14;
+    --panel: #10151d;
+    --line: #232b36;
+    --text: #dce3ea;
+    --muted: #7d8a99;
+    --red: #F25022;
+    --green: #7FBA00;
+    --blue: #00A4EF;
+    --yellow: #FFB900;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+  }
+
+  a { color: var(--blue); }
+
+  /* ---------- Header ---------- */
+  header {
+    padding: 4.5rem 1.5rem 3.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    display: inline-flex;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+  }
+  .logo span {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  header h1 {
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.01em;
+    font-weight: normal;
+  }
+
+  header p {
+    color: var(--muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    max-width: 46ch;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  .stamp {
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Layout ---------- */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* ---------- Decade dividers ---------- */
+  .decade {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 4.5rem 0 2rem;
+  }
+  .decade:first-of-type { margin-top: 3.5rem; }
+
+  .decade .num {
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
+    font-size: 2.4rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .decade .label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+    flex: 1;
+    padding-top: 0.6rem;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    position: relative;
+    padding-left: 2.6rem;
+    border-left: 2px solid var(--line);
+  }
+
+  .event {
+    position: relative;
+    margin-bottom: 2.6rem;
+  }
+  .event:last-child { margin-bottom: 0; }
+
+  .icon {
+    position: absolute;
+    left: -3.55rem;
+    top: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+  .icon svg { width: 18px; height: 18px; }
+
+  .event .year {
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.88rem;
+  }
+
+  .event h2 {
+    margin: 0.25rem 0 0.5rem;
+    font-size: 1.28rem;
+    font-weight: normal;
+  }
+
+  .event p {
+    margin: 0 0 0.6rem;
+    color: var(--text);
+  }
+  .event p:last-child { margin-bottom: 0; }
+
+  .event .note {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-left: 2px solid var(--line);
+    padding-left: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem 3rem;
+    color: var(--muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 480px) {
+    .timeline { padding-left: 2.1rem; }
+    .icon { left: -3rem; width: 28px; height: 28px; }
+    .icon svg { width: 15px; height: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-hidden="true">
+    <span style="background:var(--red)"></span>
+    <span style="background:var(--green)"></span>
+    <span style="background:var(--blue)"></span>
+    <span style="background:var(--yellow)"></span>
+  </div>
+  <h1>Sejarah Microsoft</h1>
+  <p>Perjalanan panjang dari sebuah garasi kecil di Albuquerque hingga menjadi salah satu perusahaan teknologi paling berpengaruh di dunia.</p>
+  <div class="stamp">1975 &mdash; sekarang</div>
+</header>
+
+<main>
+
+  <!-- 1970-an -->
+  <div class="decade"><span class="num">70</span><span class="label">1970-an &middot; Awal mula</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 4v4M16 4v4M4 12h16"/></svg></div>
+      <div class="year">4 April 1975</div>
+      <h2>Berdirinya Microsoft</h2>
+      <p>Bill Gates dan Paul Allen, dua teman masa kecil dari Seattle, mendirikan perusahaan bernama "Micro-Soft" di Albuquerque, New Mexico. Nama itu berasal dari gabungan kata <em>microcomputer</em> dan <em>software</em>. Tujuan awal mereka sederhana: membuat interpreter bahasa BASIC untuk komputer Altair 8800, salah satu mikrokomputer pertama di dunia.</p>
+      <p>Keduanya sudah saling mengenal sejak bersekolah di Lakeside School, tempat mereka pertama kali menyentuh komputer lewat mesin teletype di ruang komputer sekolah.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><path d="M3 12h18M12 3v18"/></svg></div>
+      <div class="year">1979</div>
+      <h2>Pindah ke Bellevue, Washington</h2>
+      <p>Setelah penjualan menembus lebih dari satu juta dolar pada 1978, kantor pusat Microsoft dipindahkan dari Albuquerque ke Bellevue, dekat kota kelahiran Gates dan Allen di Seattle. Perpindahan ini menandai awal identitas Microsoft sebagai perusahaan asal Pacific Northwest.</p>
+    </div>
+
+  </div>
+
+  <!-- 1980-an -->
+  <div class="decade"><span class="num">80</span><span class="label">1980-an &middot; Era MS-DOS dan Windows pertama</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 9h18"/></svg></div>
+      <div class="year">1980&ndash;1981</div>
+      <h2>Kesepakatan dengan IBM</h2>
+      <p>IBM membutuhkan sistem operasi untuk komputer pribadi (PC) pertama mereka. Microsoft membeli sebuah sistem operasi bernama 86-DOS dari perusahaan lain, mengembangkannya lebih lanjut, dan melisensikannya ke IBM sebagai PC-DOS &mdash; versi yang dijual Microsoft sendiri kemudian dikenal sebagai MS-DOS.</p>
+      <p>Kesepakatan ini menjadi salah satu keputusan bisnis paling menentukan dalam sejarah teknologi: Microsoft mempertahankan hak untuk melisensikan DOS ke produsen komputer lain, bukan hanya ke IBM, yang membuka jalan bagi dominasinya di masa depan.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+      <div class="year">1983</div>
+      <h2>Microsoft Word dan berpisahnya Paul Allen</h2>
+      <p>Microsoft merilis Word, salah satu aplikasi pengolah kata paling awal untuk PC. Di tahun yang sama, Paul Allen mengundurkan diri dari peran hariannya setelah didiagnosis limfoma Hodgkin, meski tetap menjadi salah satu pemegang saham terbesar.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 9h18M8 9v9"/></svg></div>
+      <div class="year">1985</div>
+      <h2>Peluncuran Windows 1.0</h2>
+      <p>Setelah tertunda beberapa kali, Microsoft merilis Windows 1.0: sebuah lapisan antarmuka grafis yang berjalan di atas MS-DOS, lengkap dengan jendela yang bisa ditumpuk-tumpuk, menu tarik-turun, dan aplikasi kecil seperti kalkulator dan permainan kartu.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 6h6v6"/></svg></div>
+      <div class="year">1986</div>
+      <h2>Penawaran saham perdana (IPO)</h2>
+      <p>Microsoft resmi melantai di bursa saham NASDAQ dengan harga awal 21 dolar per lembar. Lonjakan nilai saham setelahnya menjadikan Bill Gates miliarder termuda di dunia pada 1987, di usia 31 tahun. Di tahun yang sama, Microsoft juga pindah ke kampus barunya di Redmond, yang masih menjadi markas besar perusahaan hingga sekarang.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+      <div class="year">1989</div>
+      <h2>Kelahiran Microsoft Office</h2>
+      <p>Word, Excel, dan PowerPoint digabungkan menjadi satu paket bernama Microsoft Office. Produk ini kelak menjadi salah satu sumber pendapatan terbesar Microsoft selama puluhan tahun, jauh melampaui masa jaya Windows sekalipun.</p>
+    </div>
+
+  </div>
+
+  <!-- 1990-an -->
+  <div class="decade"><span class="num">90</span><span class="label">1990-an &middot; Dominasi dan pengawasan hukum</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+      <div class="year">1990</div>
+      <h2>Windows 3.0 mengubah segalanya</h2>
+      <p>Windows 3.0 menjadi terobosan komersial pertama bagi lini produk ini, berkat tampilan yang jauh lebih baik, manajemen memori yang lebih andal, dan dukungan ribuan aplikasi pihak ketiga. Terjual lebih dari 10 juta kopi hanya dalam dua tahun.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg></div>
+      <div class="year">1993</div>
+      <h2>Windows NT untuk dunia korporat</h2>
+      <p>Microsoft merilis Windows NT, sistem operasi baru yang dibangun dari nol untuk keandalan dan keamanan tingkat perusahaan &mdash; berbeda dari garis Windows 9x yang masih berbasis DOS. NT menjadi fondasi bagi semua versi Windows modern hingga hari ini.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+      <div class="year">1995</div>
+      <h2>Windows 95 dan gelombang internet</h2>
+      <p>Windows 95 diluncurkan dengan kampanye pemasaran terbesar dalam sejarah teknologi saat itu, memperkenalkan menu Start dan taskbar yang masih dikenali hingga sekarang. Di tahun yang sama, Bill Gates menulis memo internal terkenal berjudul <em>"The Internet Tidal Wave"</em>, yang mengarahkan seluruh perusahaan untuk berfokus pada internet &mdash; melahirkan browser Internet Explorer.</p>
+      <div class="note">Strategi mem-bundel Internet Explorer langsung ke Windows inilah yang kelak memicu tuduhan antipersaingan terhadap Microsoft.</div>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><path d="M12 2l2 5 5 1-4 4 1 6-4-3-4 3 1-6-4-4 5-1z"/></svg></div>
+      <div class="year">1998</div>
+      <h2>Kasus antitrust Amerika Serikat vs. Microsoft</h2>
+      <p>Pemerintah AS bersama sejumlah negara bagian menggugat Microsoft atas dugaan praktik monopoli, terutama terkait cara Internet Explorer dipaketkan dengan Windows untuk mematikan pesaingnya, Netscape. Pada 2000, seorang hakim sempat memerintahkan pemecahan Microsoft menjadi dua perusahaan terpisah &mdash; putusan yang kemudian dibatalkan pada tingkat banding tahun 2001 melalui kesepakatan penyelesaian.</p>
+    </div>
+
+  </div>
+
+  <!-- 2000-an -->
+  <div class="decade"><span class="num">00</span><span class="label">2000-an &middot; Ekspansi, konsol, dan tersandung</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+      <div class="year">2000</div>
+      <h2>Steve Ballmer menjadi CEO</h2>
+      <p>Steve Ballmer, teman kuliah Gates sekaligus karyawan awal Microsoft, mengambil alih posisi CEO. Gates tetap aktif sebagai Chief Software Architect hingga 2008 sebelum sepenuhnya beralih fokus ke Yayasan Bill &amp; Melinda Gates.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><rect x="3" y="8" width="18" height="10" rx="3"/><circle cx="8" cy="13" r="1.3"/><circle cx="16" cy="13" r="1.3"/></svg></div>
+      <div class="year">2001</div>
+      <h2>Windows XP dan lahirnya Xbox</h2>
+      <p>Windows XP menyatukan garis konsumen dan korporat Microsoft menjadi satu sistem operasi yang stabil, dan menjadi salah satu versi Windows paling lama digunakan penggunanya &mdash; sebagian bertahan lebih dari satu dekade. Di tahun yang sama, Microsoft meluncurkan konsol game pertamanya, Xbox, untuk bersaing dengan PlayStation dan Nintendo.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
+      <div class="year">2006</div>
+      <h2>Zune, contoh kegagalan produk</h2>
+      <p>Microsoft mencoba menantang dominasi iPod milik Apple dengan pemutar musik Zune. Produk ini gagal mendapat pijakan pasar yang berarti dan dihentikan pada 2011 &mdash; menjadi salah satu pelajaran pahit tentang sulitnya masuk ke pasar yang sudah dikuasai pesaing.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><path d="M4 18l5-9 4 6 3-4 4 7z"/></svg></div>
+      <div class="year">2007</div>
+      <h2>Windows Vista dan lanskap yang berubah</h2>
+      <p>Windows Vista dirilis dengan sambutan dingin karena tuntutan perangkat keras yang berat dan masalah kompatibilitas. Di tahun yang sama, Apple memperkenalkan iPhone pertama &mdash; awal pergeseran besar industri menuju komputasi mobile yang membuat Microsoft tertinggal selama bertahun-tahun berikutnya.</p>
+    </div>
+
+  </div>
+
+  <!-- 2010-an -->
+  <div class="decade"><span class="num">10</span><span class="label">2010-an &middot; Era Satya Nadella dan cloud</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 18h6"/></svg></div>
+      <div class="year">2012</div>
+      <h2>Windows 8 dan Surface</h2>
+      <p>Microsoft memperkenalkan antarmuka bergaya "tile" yang dioptimalkan untuk layar sentuh, sekaligus merilis lini perangkat kerasnya sendiri, Surface &mdash; langkah pertama Microsoft membuat laptop dan tabletnya sendiri, bukan hanya perangkat lunaknya.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><path d="M6 18a5 5 0 010-10 6 6 0 0111.5-1.8A4.5 4.5 0 0118 18H6z"/></svg></div>
+      <div class="year">2014</div>
+      <h2>Satya Nadella menjadi CEO</h2>
+      <p>Satya Nadella, insinyur yang sebelumnya memimpin divisi cloud Microsoft, menggantikan Steve Ballmer sebagai CEO ketiga dalam sejarah perusahaan. Ia mengubah arah Microsoft secara drastis dengan filosofi <em>"mobile-first, cloud-first"</em>, mendorong investasi besar-besaran ke Microsoft Azure dan membuka software Microsoft ke platform pesaing seperti iOS, Android, bahkan Linux &mdash; sikap yang jauh berbeda dari era sebelumnya.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><circle cx="8" cy="6" r="2.4"/><circle cx="16" cy="18" r="2.4"/><path d="M9.8 7.3L14.2 16.7"/></svg></div>
+      <div class="year">2016</div>
+      <h2>Akuisisi LinkedIn</h2>
+      <p>Microsoft mengakuisisi jejaring profesional LinkedIn senilai sekitar 26,2 miliar dolar AS &mdash; akuisisi terbesarnya saat itu &mdash; sebagai langkah memperluas jangkauan ke data profesional dan pasar rekrutmen.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><path d="M12 3l2.4 5.5L20 9l-4.4 3.8L17 19l-5-3.2L7 19l1.4-6.2L4 9l5.6-0.5z"/></svg></div>
+      <div class="year">2018</div>
+      <h2>Akuisisi GitHub</h2>
+      <p>Microsoft membeli platform kolaborasi kode GitHub senilai sekitar 7,5 miliar dolar AS. Langkah ini sempat menuai kekhawatiran di kalangan pengembang perangkat lunak bebas dan terbuka, namun Microsoft mempertahankan independensi operasional GitHub dan terus berinvestasi di dalamnya.</p>
+    </div>
+
+  </div>
+
+  <!-- 2020-an -->
+  <div class="decade"><span class="num">20</span><span class="label">2020-an &middot; Pandemi, AI, dan game raksasa</span></div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><rect x="3" y="5" width="18" height="13" rx="1"/><circle cx="9" cy="10.5" r="2"/><path d="M5 16c1-2 3-3 4-3s3 1 4 3M15 8h4M15 11h4"/></svg></div>
+      <div class="year">2020</div>
+      <h2>Microsoft Teams melonjak saat pandemi</h2>
+      <p>Ketika pandemi COVID-19 memaksa jutaan orang bekerja dan belajar dari rumah, penggunaan Microsoft Teams melonjak drastis dalam hitungan minggu, menjadikannya salah satu pilar penting bisnis Microsoft di luar Windows dan Office.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></div>
+      <div class="year">2019&ndash;2023</div>
+      <h2>Taruhan besar pada OpenAI</h2>
+      <p>Microsoft mulai berinvestasi di laboratorium riset kecerdasan buatan OpenAI pada 2019 dengan nilai 1 miliar dolar AS, lalu memperbesar kemitraan itu secara signifikan pada 2023 seiring meledaknya popularitas ChatGPT. Teknologi ini kemudian ditanamkan ke seluruh lini produk Microsoft melalui asisten AI bernama Copilot &mdash; mulai dari Windows, Office, hingga mesin pencari Bing.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+      <div class="year">2021</div>
+      <h2>Windows 11</h2>
+      <p>Microsoft merilis Windows 11, dengan tampilan yang dirombak, menu Start yang diletakkan di tengah, dan persyaratan keamanan perangkat keras yang lebih ketat dibanding versi-versi sebelumnya.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.6"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="8.5" cy="13" r="1.6"/><circle cx="15.5" cy="13" r="1.6"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+      <div class="year">2023</div>
+      <h2>Akuisisi Activision Blizzard</h2>
+      <p>Setelah hampir dua tahun diperiksa ketat oleh regulator di berbagai negara, Microsoft merampungkan akuisisi Activision Blizzard senilai 68,7 miliar dolar AS pada Oktober 2023 &mdash; kesepakatan terbesar dalam sejarah industri video game. Akuisisi ini membawa waralaba seperti <em>Call of Duty</em>, <em>World of Warcraft</em>, dan <em>Candy Crush</em> ke bawah naungan Xbox Game Studios.</p>
+    </div>
+
+    <div class="event">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="year">2024&ndash;sekarang</div>
+      <h2>Microsoft di era kecerdasan buatan</h2>
+      <p>Copilot kini terintegrasi hampir di seluruh produk Microsoft, dari sistem operasi hingga peramban dan alat produktivitas kantor. Bersamaan dengan kenaikan permintaan komputasi AI, Microsoft juga menjadi salah satu penyedia infrastruktur cloud Azure terbesar bagi model-model kecerdasan buatan generatif di seluruh dunia &mdash; melanjutkan babak baru dalam perjalanan lima dekade perusahaan ini.</p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Halaman ini dibuat sebagai rangkuman sejarah non-afiliasi &middot; disusun untuk keperluan edukasi dan siap diunggah ke <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+
+</body>
+</html>
